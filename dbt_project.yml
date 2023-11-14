@@ -4,8 +4,7 @@ version: '0.10.0'
 config-version: 2
 require-dbt-version: [">=1.3.0", "<2.0.0"]
 models:
-  google_ads:
-    +schema: google_ads
+  google_ads_custom:
     +materialized: table
   #{% set schema = "google_ads_" ~ env_var('DBT_CLIENT_ID') %}
 vars:
