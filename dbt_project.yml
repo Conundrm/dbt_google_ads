@@ -7,7 +7,10 @@ models:
   google_ads:
     +schema: google_ads
     +materialized: table
+  #{% set schema = "google_ads_" ~ env_var('DBT_CLIENT_ID') %}
 vars:
+  google_ads_database: conundrmdev
+  google_ads_schema: google_ads
   google_ads:
     ad_stats: "{{ ref('stg_google_ads__ad_stats') }}"
     account_history: "{{ ref('stg_google_ads__account_history') }}"
@@ -25,3 +28,8 @@ vars:
   google_ads__campaign_stats_passthrough_metrics: []
   google_ads__keyword_stats_passthrough_metrics: []
   google_ads__account_stats_passthrough_metrics: []
+
+profile: google_ads
+
+
+
