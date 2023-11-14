@@ -1,0 +1,13 @@
+version: 2
+
+
+sources:
+  - name: google_ads__custom
+    database: "{{ var('google_ads_database', true) }}"
+    schema: "{{ 'google_ads_' ~ env_var('DBT_CLIENT_ID') }}"
+    tables: 
+      - name: geo_performance
+      - name: geo_target
+models:
+  - name: google_ads__geo_report
+    description: Ad metrics broken out by state
